@@ -257,6 +257,67 @@
     font-size: 13px;
       }
 
+      /* Topbar action button */
+.topbar-action-btn {
+    width: auto;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+      /* ===========================
+   MODAL (RESPONSIVE)
+=========================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px; /* mobile breathing room */
+}
+
+.modal-card {
+    width: 100%;
+    max-width: 600px;
+
+    max-height: 90vh;          /* critical for mobile */
+    overflow-y: auto;          /* allow scrolling */
+
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Modal buttons alignment */
+.modal-card .login-button {
+    flex: 1;
+}
+
+/* ===========================
+   MOBILE TWEAKS
+=========================== */
+@media (max-width: 768px) {
+    .modal-card {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .modal-card h3 {
+        font-size: 18px;
+    }
+
+    .modal-card .form-group {
+        margin-bottom: 14px;
+    }
+}
 
 
         /* Responsive */

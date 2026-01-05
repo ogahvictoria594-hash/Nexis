@@ -14,33 +14,17 @@
 <body>
 
 <div class="dashboard">
-
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            School Admin
-        </div>
-
-        <ul class="nav-links">
-            <li><a href="student_management.php"><i class="fas fa-user-graduate"></i> Student Management</a></li>
-            <li><a href="staff_management.php"><i class="fas fa-chalkboard-teacher"></i> Staff Management</a></li>
-            <li><a href="class_management.php"><i class="fas fa-school"></i> Class Management</a></li>
-            <li><a href="subject_management.php"><i class="fas fa-book"></i> Subject Management</a></li>
-            <li><a href="fee_management.php"><i class="fas fa-money-check-alt"></i> Fee Management</a></li>
-            <li><a href="result_management.php"><i class="fas fa-chart-line"></i> Result Management</a></li>
-        </ul>
-
-        <div class="logout">
-            <a href="#" class="nav-links a">
-                <i class="fas fa-sign-out-alt"></i> Logout
-            </a>
-        </div>
-    </aside>
-
+    <!-- Sidebar -->
+    <?php include "components/SideBar.php"; ?>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
 
         <!-- TOPBAR -->
+         <span class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </span>
+
         <div class="topbar">
             <h1>Class Management</h1>
             <button class="login-button" onclick="openModal()" style="width:auto;padding:12px 18px;">
@@ -119,10 +103,19 @@
             <input type="text" class="form-input" placeholder="e.g. SS 1">
         </div>
 
-        <div class="form-group" style="width:100%;">
-            <label class="form-label">Class Arm</label>
-            <input type="text" class="form-input" placeholder="e.g. A">
-        </div>
+     <div class="form-group" style="width:100%;">
+        <label class="form-label">Class Arm</label>
+        <select name="class_arm" id="class_arm" class="form-input">
+            <option value="">Select Arm</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+        </select>
+    </div>
+
 
         <div style="display:flex;gap:10px;width:100%;margin-top:15px;">
             <button class="login-button" style="flex:1;">Save Class</button>
@@ -141,6 +134,22 @@
     function closeModal() {
         document.getElementById('classModal').style.display = 'none';
     }
+
+   
+    function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('active');
+}
+  document.addEventListener('click', function(e) {
+    const sidebar = document.getElementById('sidebar');
+    const toggle = document.querySelector('.menu-toggle');
+
+    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+        sidebar.classList.remove('active');
+    }
+});
+
+
 </script>
 
 </body>

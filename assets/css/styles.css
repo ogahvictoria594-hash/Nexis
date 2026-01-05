@@ -1,0 +1,280 @@
+
+  
+        :root {
+            --navy-blue: #0a1a3a;
+            --navy-blue-light: #1a2a4a;
+            --gold-primary: #d4af37;
+            --gold-secondary: #f4d03f;
+            --light-bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+        }
+
+        /* Layout */
+        .dashboard {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, var(--navy-blue), var(--navy-blue-light));
+            color: white;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: var(--gold-secondary);
+        }
+
+        .nav-links {
+            list-style: none;
+            flex: 1;
+        }
+
+        .nav-links li {
+            margin-bottom: 8px;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: rgba(255,255,255,0.9);
+            border-radius: 8px;
+            transition: background 0.3s;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(212, 175, 55, 0.15);
+            color: var(--gold-secondary);
+        }
+
+       .nav-links a.active {
+        background: rgba(212, 175, 55, 0.25);
+        color: var(--gold-secondary);
+        font-weight: 700;
+       }
+
+       .nav-links a.active i {
+        color: var(--gold-secondary);
+        }
+        /* =========================================================
+   LOGOUT BUTTON (SIDEBAR)
+========================================================= */
+      .logout {
+          margin-top: 20px;
+          padding-top: 15px;
+          border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+.logout a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 15px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.25s ease;
+}
+
+.logout a i {
+    font-size: 16px;
+    color: var(--gold-primary);
+}
+
+.logout a:hover {
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold-secondary);
+}
+
+.logout a:hover i {
+    color: var(--gold-secondary);
+}
+
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 25px;
+        }
+
+        /* Topbar */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .topbar h1 {
+            font-size: 24px;
+            color: var(--navy-blue);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 22px;
+            cursor: pointer;
+            color: var(--navy-blue);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 22px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-info h3 {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 6px;
+        }
+
+        .stat-info h2 {
+            font-size: 26px;
+            color: var(--navy-blue);
+        }
+
+        .stat-icon {
+            font-size: 30px;
+            color: var(--gold-primary);
+            background: rgba(212,175,55,0.15);
+            padding: 14px;
+            border-radius: 12px;
+        }
+
+    
+        .login-button {
+            padding: 10px 16px;            /* balanced size */
+            font-size: 14px;
+            font-weight: 600;
+
+            background: linear-gradient(
+                135deg,
+                var(--gold-primary),
+                var(--gold-secondary)
+            );
+            color: var(--navy-blue);
+
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+            transition: all 0.25s ease;
+        }
+
+        .login-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+        }
+
+        .login-button:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+        }
+
+
+  
+      .form-group {
+          margin-bottom: 16px;
+      }
+
+      .form-label {
+          display: block;
+          margin-bottom: 6px;
+          font-size: 13px;
+          font-weight: 600;
+          color: var(--navy-blue);
+      }
+
+      .form-input {
+          width: 100%;
+          padding: 10px 14px;           /* balanced height */
+          font-size: 14px;
+
+          border-radius: 8px;
+          border: 1.5px solid #d1d5db;
+          background: #fff;
+          color: #333;
+
+          transition: all 0.25s ease;
+      }
+
+      .form-input::placeholder {
+          color: #9ca3af;
+      }
+
+      .form-input:focus {
+          outline: none;
+          border-color: var(--navy-blue);
+          box-shadow: 0 0 0 3px rgba(10, 26, 58, 0.1);
+      }
+
+    table .login-button {
+    padding: 8px 14px;
+    font-size: 13px;
+      }
+
+
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                height: 100%;
+                z-index: 1000;
+                transition: left 0.3s ease;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }

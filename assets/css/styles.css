@@ -179,6 +179,8 @@
             border-radius: 12px;
         }
 
+                 
+
     
         .login-button {
             padding: 10px 16px;            /* balanced size */
@@ -265,6 +267,18 @@
     align-items: center;
     gap: 8px;
 }
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* keeps title left, buttons right */
+    gap: 10px; /* optional spacing between elements */
+}
+
+.topbar-buttons {
+    display: flex;
+    gap: 10px; /* space between the two buttons */
+}
+
 
 
       /* ===========================
@@ -339,3 +353,104 @@
                 display: block;
             }
         }
+
+    
+        /* Hamburger button */
+        .hamburger-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Mobile sidebar behavior */
+        @media (max-width: 900px) {
+            .hamburger-btn {
+                display: block;
+            }
+
+            .sidebar {
+                position: fixed;
+                left: -260px;
+                top: 0;
+                height: 100vh;
+                z-index: 1000;
+                transition: left 0.3s ease;
+            }
+
+            .sidebar.active {
+                left: 0;
+            }
+        }
+
+        /* =====================================================
+   FEE MANAGEMENT – MOBILE FIX (SCOPED & SAFE)
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* Prevent page-wide horizontal scroll */
+    .fee-page {
+        overflow-x: hidden;
+    }
+
+    /* Main content breathing room */
+    .fee-page .main-content {
+        padding: 15px;
+    }
+
+    /* Topbar stacking */
+    .fee-page .topbar {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .fee-page .topbar h1 {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .fee-page .topbar-buttons {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+    }
+
+    .fee-page .topbar-buttons .login-button {
+        flex: 1;
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    /* Stat cards tighter */
+    .fee-page .stat-card {
+        padding: 15px;
+    }
+
+    /* Filters row stays horizontal-scroll ONLY */
+    .fee-page .stat-card > div[style*="overflow-x:auto"] {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Tables scroll horizontally without breaking page */
+    .fee-page table {
+        min-width: 900px;
+    }
+
+    .fee-page th,
+    .fee-page td {
+        font-size: 13px;
+        padding: 8px;
+        white-space: nowrap;
+    }
+
+    /* Modals */
+    .fee-page .modal-card {
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+}

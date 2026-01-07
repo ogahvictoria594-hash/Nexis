@@ -17,9 +17,9 @@
 
     <!-- Main -->
     <main class="main-content">
+        <i class="fas fa-bars menu-toggle" onclick="toggleSidebar()"></i>
         <div class="topbar">
             <h1>Dashboard Overview</h1>
-            <i class="fas fa-bars menu-toggle" onclick="toggleSidebar()"></i>
         </div>
 
         <!-- Stats -->

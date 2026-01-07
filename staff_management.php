@@ -20,15 +20,21 @@
     <!-- MAIN -->
     <main class="main-content">
 
-        <!-- TOPBAR -->
-       <div class="topbar">
-            <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
+       <!-- TOPBAR -->
+<div class="topbar">
+    <i class="fas fa-bars menu-toggle" id="menuToggle"></i>
     <h1>Staff Management</h1>
 
-    <button class="login-button topbar-action-btn" onclick="openStaffModal()">
-        <i class="fas fa-plus"></i> Create Staff
-    </button>
+    <div class="topbar-buttons">
+        <button class="login-button topbar-action-btn" onclick="openStaffModal()">
+            <i class="fas fa-plus"></i> Create Staff
+        </button>
+        <button class="login-button topbar-action-btn" onclick="openRoleModal()">
+            <i class="fas fa-user-shield"></i> Assign Role
+        </button>
+    </div>
 </div>
+
 
 
         <!-- STAFF TABLE -->
@@ -41,7 +47,7 @@
                         <th style="padding:12px;">Name</th>
                         <th style="padding:12px;">Category</th>
                         <th style="padding:12px;">Phone</th>
-                        <th style="padding:12px;">Actions</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -50,15 +56,15 @@
                         <td style="padding:12px;">Academic</td>
                         <td style="padding:12px;">08012345678</td>
                         <td style="padding:12px;">
-                            <button class="login-button" onclick="openRoleModal()">Assign Role</button>
+                        
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:12px;">Mary Okorie</td>
+                        <td style="padding:12px;" >Mary Okorie</td>
                         <td style="padding:12px;">Non Academic</td>
                         <td style="padding:12px;">08198765432</td>
                         <td style="padding:12px;">
-                            <button class="login-button" onclick="openRoleModal()">Assign Role</button>
+                        
                         </td>
                     </tr>
                 </tbody>
@@ -72,11 +78,16 @@
   <div id="staffModal" class="modal-overlay" style="display:none;">
     <div class="stat-card modal-card">
         <h3 style="margin-bottom:15px;">Create Staff</h3>
-
+         <label for="First_Name" class="form-label">First Name</label>
         <div class="form-group"><input class="form-input" placeholder="First Name"></div>
+
+        <label for="Surname" class="form-label">Surname</label>
         <div class="form-group"><input class="form-input" placeholder="Surname"></div>
+
+        <label for="Other_Names" class="form-label">Other Names</label>
         <div class="form-group"><input class="form-input" placeholder="Other Names"></div>
 
+        <label for="Gender" class="form-label">Gender</label>
         <div class="form-group">
             <select class="form-input">
                 <option>Gender</option>
@@ -85,13 +96,25 @@
             </select>
         </div>
 
+         <label for="Date_of_birth" class="form-label">Date of Birth</label>
+        <div class="form-group"><input type="date" input="Date Of Birth" class="form-input"></div>
+
+         <label for="Date_of_employment" class="form-label">Date of Employment</label>
         <div class="form-group"><input type="date" class="form-input"></div>
-        <div class="form-group"><input type="date" class="form-input"></div>
+
+         <label for="Residential_Address" class="form-label">Residential Address</label>
         <div class="form-group"><input class="form-input" placeholder="Residential Address"></div>
+
+         <label for="Phone_Number" class="form-label">Phone Number</label>
         <div class="form-group"><input class="form-input" placeholder="Phone Number"></div>
+
+        <label for="profilePicture" class="form-label">Profile Picture</label>
         <div class="form-group"><input type="file" class="form-input"></div>
+
+        <label for="Job_Description" class="form-label">Job Description</label>
         <div class="form-group"><input class="form-input" placeholder="Job Description"></div>
 
+        <label for="Category" class="form-label">Select Category</label>
         <div class="form-group">
             <select class="form-input">
                 <option>Staff Category</option>
@@ -113,9 +136,6 @@
     <div class="stat-card modal-card">
         <h3 style="margin-bottom:15px;">Assign Role</h3>
 
-        <div class="form-group">
-            <input type="password" class="form-input" placeholder="Password">
-        </div>
 
         <div class="form-group">
             <select class="form-input">
@@ -163,6 +183,11 @@
                     <option>Secondary</option>
                 </select>
             </div>
+        </div>
+
+        <label for="password" class="form-label">Password</label>
+        <div class="form-group">
+            <input type="password" class="form-input" placeholder="Password">
         </div>
 
         <div style="display:flex;gap:10px;">

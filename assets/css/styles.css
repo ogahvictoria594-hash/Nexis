@@ -409,3 +409,54 @@ table .login-button {
         margin-bottom: 14px;
     }
 }
+
+
+/* =========================
+   TABLE STYLING (DASHBOARD)
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy-blue);
+    background: #f1f5f9;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background: #f9fafb;
+}
+
+td:last-child {
+    display: flex;
+    gap: 8px;
+}
+
+/* =========================
+   FILTER BAR (HORIZONTAL)
+========================= */
+.filter-bar {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-bar .form-input {
+    width: auto;
+    min-width: 180px;
+}
